@@ -1,0 +1,30 @@
+type Sku {
+    id: Int
+    name: String
+    specs: [Spec]
+    stocks: [Stock]
+    price: Float
+}
+
+type Spec {
+    id: Int
+    skuId: Int
+    name: String
+    value: String
+}
+
+type Stock {
+    id: Int
+    skuId: Int
+    area: String
+    stocks: Int
+}
+
+schema {
+    query: Query
+}
+
+type Query {
+    allSkus: [Sku]
+    sku(id: Int): Sku
+}
