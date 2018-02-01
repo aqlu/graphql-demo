@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.io.Serializable;
 
 /**
- * Stock
+ * 库存实体
  * Created by aqlu on 2018/1/31.
  */
 @Data

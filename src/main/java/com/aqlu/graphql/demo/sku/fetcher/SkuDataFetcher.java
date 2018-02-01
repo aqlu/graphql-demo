@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * SkuDataFetcher
+ * `sku`的数据提取器
  * Created by aqlu on 2018/1/31.
  */
 @Component
 @Slf4j
-public class SkuDataFetcher implements DataFetcher<Sku>{
+public class SkuDataFetcher implements DataFetcher<Sku> {
 
     @Autowired
     private SkuRepository skuRepository;

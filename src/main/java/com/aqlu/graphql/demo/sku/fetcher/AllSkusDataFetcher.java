@@ -13,11 +13,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * AllSkusDataFetcher
+ * `allSkus`的数据提取器
  * Created by aqlu on 2018/1/31.
  */
 @Component
-public class AllSkusDataFetcher implements DataFetcher<List<Sku>>{
+public class AllSkusDataFetcher implements DataFetcher<List<Sku>> {
 
     @Autowired
     private SkuRepository skuRepository;
@@ -28,7 +28,7 @@ public class AllSkusDataFetcher implements DataFetcher<List<Sku>>{
     }
 
     @PostConstruct
-    public void init(){
+    public void init() {
         // 添加一些初始化数据
         Sku sku_1 = new Sku();
         sku_1.setId(1);

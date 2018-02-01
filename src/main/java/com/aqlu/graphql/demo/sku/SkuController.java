@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * SkuController
+ * sku控制器
  * Created by aqlu on 2018/1/31.
  */
 @RestController

@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * StocksDataFetcher
+ * `stocks`的数据提取器
  * Created by aqlu on 2018/1/31.
  */
 @Component

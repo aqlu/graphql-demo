@@ -19,7 +19,7 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 
 /**
- * SkuService
+ * GrahpQL服务
  * Created by aqlu on 2018/1/31.
  */
 @Service
@@ -39,14 +39,17 @@ public class GraphQLService {
 
     private GraphQL graphQL;
 
+    /**
+     * GrahpQL dsl 执行入口
+     * @param dsl GraphQL dsl查询语言
+     */
     public ExecutionResult query(String dsl) {
         return graphQL.execute(dsl);
     }
 
     @PostConstruct
     private void loadSchema() throws IOException {
-
-        // 类型定义注册
+        // 类型定义注册，加载“sku.graphqls”文件定义的schema
         TypeDefinitionRegistry registry = new SchemaParser().parse(schemaResource.getFile());
 
         // 运行时接线
@@ -64,10 +67,10 @@ public class GraphQLService {
                 .type("Query",
                         runtimeWiring -> runtimeWiring.dataFetcher("allSkus", allSkusFetcher)
                                 .dataFetcher("sku", skuFetcher)
-                )
+                ) // 分别指定Query类型中allSkus字段与sku字段对应的Fetcher
                 .type("Sku",
                         runtimeWiring -> runtimeWiring.dataFetcher("stocks", stocksFetcher)
-                )
+                ) // 指定schemaSku类型的stocks字段对应的Fetcher
                 .build();
     }
 }

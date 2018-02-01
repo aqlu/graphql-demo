@@ -4,10 +4,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 /**
- * Spec
+ * 规格属性
  * Created by aqlu on 2018/1/31.
  */
 @Data
